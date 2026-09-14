@@ -1,1 +1,474 @@
+<!DOCTYPE html>
 
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Senado Press | Prensa y Comunicaciones</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f5f7;
+      color: #1f2933;
+    }
+
+    header {
+      background: #111827;
+      color: white;
+      padding: 22px 7%;
+      border-bottom: 4px solid #9b7b32;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .logo h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 30px;
+      letter-spacing: 1px;
+    }
+
+    .logo p {
+      margin-top: 5px;
+      font-size: 13px;
+      color: #d1d5db;
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav button {
+      background: transparent;
+      border: 1px solid #6b7280;
+      color: white;
+      padding: 10px 17px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+    }
+
+    nav button:hover {
+      background: #9b7b32;
+      border-color: #9b7b32;
+    }
+
+    .hero {
+      background: white;
+      padding: 65px 7%;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .hero h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 42px;
+      color: #111827;
+      max-width: 750px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #59636e;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hero-buttons {
+      margin-top: 28px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .primary-button,
+    .secondary-button {
+      padding: 12px 22px;
+      border-radius: 4px;
+      font-size: 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .primary-button {
+      background: #1f2937;
+      color: white;
+      border: 1px solid #1f2937;
+    }
+
+    .primary-button:hover {
+      background: #374151;
+    }
+
+    .secondary-button {
+      background: white;
+      color: #1f2937;
+      border: 1px solid #9ca3af;
+    }
+
+    .secondary-button:hover {
+      background: #f3f4f6;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 45px auto;
+      padding: 0 7%;
+    }
+
+    .section-title {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 28px;
+      margin-bottom: 22px;
+      color: #111827;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .news-card {
+      background: white;
+      border: 1px solid #e0e3e7;
+      border-radius: 5px;
+      overflow: hidden;
+      transition: 0.2s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    .news-image {
+      height: 170px;
+      background: #d9dde3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6b7280;
+      font-size: 13px;
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .category {
+      font-size: 11px;
+      color: #9b7b32;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 9px;
+    }
+
+    .news-content h3 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 20px;
+      color: #111827;
+      margin-bottom: 10px;
+      line-height: 1.35;
+    }
+
+    .news-content p {
+      color: #66717d;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .portal {
+      margin-top: 55px;
+      background: #111827;
+      color: white;
+      padding: 40px;
+      border-left: 5px solid #9b7b32;
+    }
+
+    .portal h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      margin-bottom: 10px;
+      font-size: 27px;
+    }
+
+    .portal p {
+      color: #d1d5db;
+      line-height: 1.6;
+      max-width: 750px;
+    }
+
+    .portal-buttons {
+      margin-top: 22px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    footer {
+      margin-top: 70px;
+      background: #0b1120;
+      color: #9ca3af;
+      padding: 30px 7%;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    @media (max-width: 850px) {
+      .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .news-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h2 {
+        font-size: 32px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+
+```
+  <div class="logo">
+    <h1>Senado Press</h1>
+    <p>Prensa y Comunicaciones del Senado</p>
+  </div>
+
+  <nav>
+    <button onclick="mostrarInicio()">Inicio</button>
+    <button onclick="mostrarNoticias()">Noticias</button>
+    <button onclick="mostrarPeriodistas()">Periodistas</button>
+    <button onclick="mostrarSenadores()">Senadores</button>
+    <button onclick="mostrarLogin()">Acceso</button>
+  </nav>
+
+</div>
+```
+
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+
+```
+  <h2>Información institucional del Senado de la República</h2>
+
+  <p>
+    Plataforma de prensa y comunicaciones destinada a facilitar
+    el acceso a información, noticias, contenidos institucionales
+    y herramientas de comunicación para periodistas y senadores.
+  </p>
+
+  <div class="hero-buttons">
+    <button class="primary-button" onclick="mostrarNoticias()">
+      Ver noticias
+    </button>
+
+    <button class="secondary-button" onclick="mostrarLogin()">
+      Acceso al portal
+    </button>
+  </div>
+
+</div>
+```
+
+  </section>
+
+  <main>
+
+```
+<h2 class="section-title">Actualidad</h2>
+
+<div class="news-grid">
+
+  <article class="news-card">
+
+    <div class="news-image">
+      Imagen institucional
+    </div>
+
+    <div class="news-content">
+
+      <div class="category">
+        Senado
+      </div>
+
+      <h3>
+        Información y actividad legislativa
+      </h3>
+
+      <p>
+        Consulte las principales actividades, iniciativas y
+        acontecimientos relacionados con el Senado.
+      </p>
+
+    </div>
+
+  </article>
+
+
+  <article class="news-card">
+
+    <div class="news-image">
+      Imagen institucional
+    </div>
+
+    <div class="news-content">
+
+      <div class="category">
+        Comunicaciones
+      </div>
+
+      <h3>
+        Comunicados oficiales
+      </h3>
+
+      <p>
+        Espacio destinado a la publicación de información
+        institucional y comunicados oficiales.
+      </p>
+
+    </div>
+
+  </article>
+
+
+  <article class="news-card">
+
+    <div class="news-image">
+      Imagen institucional
+    </div>
+
+    <div class="news-content">
+
+      <div class="category">
+        Prensa
+      </div>
+
+      <h3>
+        Recursos para periodistas
+      </h3>
+
+      <p>
+        Herramientas y contenidos destinados a facilitar
+        el trabajo de los profesionales de prensa.
+      </p>
+
+    </div>
+
+  </article>
+
+</div>
+
+
+<section class="portal">
+
+  <h2>Portal de prensa</h2>
+
+  <p>
+    Los periodistas registrados podrán acceder a herramientas
+    de comunicación, publicar contenidos y participar en los
+    espacios habilitados por la plataforma.
+  </p>
+
+  <div class="portal-buttons">
+
+    <button class="primary-button" onclick="mostrarLogin()">
+      Iniciar sesión
+    </button>
+
+    <button class="secondary-button" onclick="mostrarRegistro()">
+      Crear cuenta
+    </button>
+
+  </div>
+
+</section>
+```
+
+  </main>
+
+  <footer>
+
+```
+<p>
+  <strong>Senado Press</strong> — Plataforma de Prensa y Comunicaciones
+</p>
+
+<p style="margin-top: 8px;">
+  Proyecto institucional de información y comunicación.
+</p>
+```
+
+  </footer>
+
+  <script>
+
+    function mostrarInicio() {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+
+    function mostrarNoticias() {
+      alert("La sección de noticias estará disponible próximamente.");
+    }
+
+    function mostrarPeriodistas() {
+      alert("Portal para periodistas.");
+    }
+
+    function mostrarSenadores() {
+      alert("Portal para senadores.");
+    }
+
+    function mostrarLogin() {
+      alert("Inicio de sesión próximamente.");
+    }
+
+    function mostrarRegistro() {
+      alert("Registro de usuarios próximamente.");
+    }
+
+  </script>
+
+</body>
+</html>
